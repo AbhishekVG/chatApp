@@ -68,7 +68,6 @@ const styles = {
     }
 } 
 const mapStateToProps = (state) => {
-    console.log('state', state);
     const { email, password, loader, error } = state.loginAuth;
 
     return { email, password, loader, error};

@@ -9,9 +9,9 @@ export default class ChattingAppRouter extends React.Component{
         return(
             <View style={{flex: 1, paddingTop: 25}}>          
                 <Router sceneStyle={{ paddingTop: 50}}>
-                    {/* <Scene key="auth">
+                    <Scene key="auth">
                         <Scene key='login' component={LoginForm} title='Please Login' />
-                    </Scene> */}
+                    </Scene>
                     <Scene key="chat">
                         <Scene key='chatPage' component={ChatPage} title="ChatWindow" />
                     </Scene>

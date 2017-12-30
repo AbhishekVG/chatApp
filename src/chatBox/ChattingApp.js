@@ -10,8 +10,8 @@ class ChatPage extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      currentUserId: 22 || firebase.auth().currentUser.uid,
-      curentUserName: 22 || firebase.auth().currentUser.email, 
+      currentUserId: firebase.auth().currentUser.uid,
+      curentUserName: firebase.auth().currentUser.email, 
     }
   }
 
@@ -24,16 +24,13 @@ class ChatPage extends React.Component {
   }
 
   componentWillReceiveProps(nextProps){
-    console.log('nextProps.messageData render,',nextProps)
   this.setState((previousState) => ({
       messages: GiftedChat.append(previousState.messages, nextProps.chatHistory),
     }));
   }
 
   render() {
-    console.log('this.props.messageData render,',this.props)
     const data = this.props.chatHistory ? this.props.chatHistory: [];
-    console.log('data',data);
     return (
       <View style={styles.container}>
         <GiftedChat
@@ -57,7 +54,6 @@ const styles = StyleSheet.create({
 });
 
 const mapStateToProps = ({ messageData }) => {
-  console.log("the mesga data is here", messageData);
   return {chatHistory: messageData}
 }
 export default connect(mapStateToProps, { sendMessage, syncMessages })(ChatPage);

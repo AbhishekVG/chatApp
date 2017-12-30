@@ -9,7 +9,6 @@ const INITIAL_STATE = {
 }
 
 const LoginAuthentication = (state = INITIAL_STATE, action) => {
-    console.log(action);
     switch(action.type){
         case EMAIL_CHANGE:
             return {...state, email: action.payload}

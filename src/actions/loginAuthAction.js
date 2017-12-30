@@ -32,7 +32,6 @@ const loginFailed = (err, dispatch) => {
 }
 
 export const loginUser = ({email, password}) => {
-    console.log("email and pass",email,password);
     return (dispatch) => {
         dispatch({type: LOGIN_REQUEST});
         firebase.auth().signInWithEmailAndPassword(email, password)

@@ -17,7 +17,6 @@ export default class ChattingApp extends React.Component{
         messagingSenderId: "141402190865"
       };
       firebase.initializeApp(config);
-      firebase.auth().signInWithEmailAndPassword('test@test.com', '123456');
     }
     render(){
         return(
